@@ -202,7 +202,7 @@
                 ✅ Импортировать выбранные листы
             </button>
         </div>
-        <label>Диапазон (необязательно)</label>
+        <label id="rangeLabel">Диапазон (необязательно)</label>
         <input type="text" id="range" placeholder="A1:D10 или оставь пустым" />
         <button id="importBtn">Импортировать таблицу</button>
         <button id="updateBtn" style="display: none; background: #ff9800">
@@ -465,7 +465,7 @@
                     t("sheetName");
                 document.querySelector("#loadSheetsBtn").textContent =
                     t("loadSheets");
-                document.querySelectorAll("label")[3].textContent = t("range");
+                document.querySelector("#rangeLabel").textContent = t("range");
                 document.querySelector("#range").placeholder =
                     t("rangePlaceholder");
                 document.querySelector("#importBtn").textContent =
