@@ -272,595 +272,458 @@
         </div>
 
         <script>
-            // ========== ССЫЛКИ НА СКРИНШОТЫ ==========
-            const screenshots = {
-                step1: "screenshots/step1.png",
-                step2: "screenshots/step2.png",
-                step2_1: "screenshots/step2_1.png",
-                step3: "screenshots/step3.png",
-                step3_1: "screenshots/step3_1.png",
-                step4: "screenshots/step4.png",
-                step5: "screenshots/step5.png",
-                step5_1: "screenshots/step5_1.png",
-            };
-            // ==========================================
+            <script>
+                // ========== ССЫЛКИ НА СКРИНШОТЫ ==========
+                const GITHUB_USERNAME = "anymira";
+                const REPO_NAME = "figma-sheets-plugin";
 
-            // Словарь переводов
-            const translations = {
-                ru: {
-                    title: "📊 Google Sheets → Figma",
-                    sheetUrl: "Ссылка на Google таблицу",
-                    apiKey: "Google API Key",
-                    saveBtn: "Сохранить",
-                    sheetName: "Название листа",
-                    range: "Диапазон (необязательно)",
-                    rangePlaceholder: "A1:D10 или оставь пустым",
-                    importBtn: "Импортировать таблицу",
-                    updateBtn: "🔄 Обновить выбранную таблицу",
-                    keySaved: "✅ Ключ сохранён!",
-                    fillAllFields: "⚠️ Заполните все поля",
-                    invalidUrl: "❌ Неверная ссылка на таблицу",
-                    loading: "⏳ Загружаю данные...",
-                    emptyTable: "❌ Таблица пуста или нет доступа",
-                    loadedRows: "✅ Загружено строк:",
-                    updatedRows: "✅ Обновлено строк:",
-                    error: "❌ Ошибка. Проверьте ключ и ссылку",
-                    enterKey: "⚠️ Введите ключ!",
-                    loadSheets: "Выбрать листы",
-                    selectSheets: "Выберите листы для импорта:",
-                    importSelected: "✅ Импортировать выбранные листы",
-                    loadingSheets: "⏳ Загружаю список листов...",
-                    noSheetsSelected: "⚠️ Выберите хотя бы один лист",
-                    sheetsLoaded: "✅ Листов загружено:",
-                    helpLink: "Как получить API ключ?",
-                    helpTitle: "Как получить Google API Key",
-                    helpContent: `
-                                           <div class="modal-step">
-                                               <h4>Шаг 1: Откройте Google Cloud Console</h4>
-                                               <p>Перейдите на страницу <a href="https://console.cloud.google.com" target="_blank" style="color: #2b7fff; text-decoration: none; font-weight: 500;">Google Cloud Console</a></p>
-                                               <img src="${screenshots.step1}" alt="Google Cloud Console" class="screenshot-img">
-                                           </div>
+                const screenshots = {
+                    step1: `https://raw.githubusercontent.com/${amymira}/${figma-sheets-plugin}/main/screenshots/step1.png`,
+                    step2: `https://raw.githubusercontent.com/${amymira}/${figma-sheets-plugin}/main/screenshots/step2.png`,
+                    step2_1: `https://raw.githubusercontent.com/${amymira}/${figma-sheets-plugin}/main/screenshots/step2_1.png`,
+                    step3: `https://raw.githubusercontent.com/${amymira}/${figma-sheets-plugin}/main/screenshots/step3.png`,
+                    step3_1: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/screenshots/step3-1.png`,
+                    step4: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/screenshots/step4.png`,
+                    step5: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/screenshots/step5.png`,
+                    step5_1: `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${REPO_NAME}/main/screenshots/step5-1.png`
+                };
+                // ==========================================
 
-                                           <div class="modal-step">
-                                               <h4>Шаг 2: Создайте новый проект</h4>
-                                               <p>Нажмите на выпадающий список проектов в верхней части страницы и выберите "New Project" (Новый проект)</p>
-                                               <img src="${screenshots.step2}" alt="Создание проекта" class="screenshot-img">
-                                               <img src="${screenshots.step2_1}" alt="Создание проекта - шаг 2" class="screenshot-img">
-                                           </div>
+                // Словарь переводов
+                const translations = {
+                    // дальше идёт весь остальной код...
 
-                                           <div class="modal-step">
-                                               <h4>Шаг 3: Включите Google Sheets API</h4>
-                                               <p>Перейдите в <strong>APIs & Services → Library</strong> и найдите <strong>Google Sheets API</strong>. Нажмите "Enable" (Включить)</p>
-                                               <img src="${screenshots.step3}" alt="Включение API" class="screenshot-img">
-                                               <img src="${screenshots.step3_1}" alt="Включение API - шаг 2" class="screenshot-img">
-                                           </div>
+                // Словарь переводов
+                const translations = {
+                    ru: {
+                        title: "📊 Google Sheets → Figma",
+                        sheetUrl: "Ссылка на Google таблицу",
+                        apiKey: "Google API Key",
+                        saveBtn: "Сохранить",
+                        sheetName: "Название листа",
+                        range: "Диапазон (необязательно)",
+                        rangePlaceholder: "A1:D10 или оставь пустым",
+                        importBtn: "Импортировать таблицу",
+                        updateBtn: "🔄 Обновить выбранную таблицу",
+                        keySaved: "✅ Ключ сохранён!",
+                        fillAllFields: "⚠️ Заполните все поля",
+                        invalidUrl: "❌ Неверная ссылка на таблицу",
+                        loading: "⏳ Загружаю данные...",
+                        emptyTable: "❌ Таблица пуста или нет доступа",
+                        loadedRows: "✅ Загружено строк:",
+                        updatedRows: "✅ Обновлено строк:",
+                        error: "❌ Ошибка. Проверьте ключ и ссылку",
+                        enterKey: "⚠️ Введите ключ!",
+                        loadSheets: "Выбрать листы",
+                        selectSheets: "Выберите листы для импорта:",
+                        importSelected: "✅ Импортировать выбранные листы",
+                        loadingSheets: "⏳ Загружаю список листов...",
+                        noSheetsSelected: "⚠️ Выберите хотя бы один лист",
+                        sheetsLoaded: "✅ Листов загружено:",
+                        helpLink: "Как получить API ключ?",
+                        helpTitle: "Как получить Google API Key",
+                        helpContent: `
+                                               <div class="modal-step">
+                                                   <h4>Шаг 1: Откройте Google Cloud Console</h4>
+                                                   <p>Перейдите на страницу <a href="https://console.cloud.google.com" target="_blank" style="color: #2b7fff; text-decoration: none; font-weight: 500;">Google Cloud Console</a></p>
+                                                   <img src="${screenshots.step1}" alt="Google Cloud Console" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Шаг 4: Создайте API ключ</h4>
-                                               <p>Перейдите в <strong>APIs & Services → Credentials</strong> и нажмите <strong>Create Credentials → API key</strong></p>
-                                               <img src="${screenshots.step4}" alt="Создание ключа" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Шаг 2: Создайте новый проект</h4>
+                                                   <p>Нажмите на выпадающий список проектов в верхней части страницы и выберите "New Project" (Новый проект)</p>
+                                                   <img src="${screenshots.step2}" alt="Создание проекта" class="screenshot-img">
+                                                   <img src="${screenshots.step2_1}" alt="Создание проекта - шаг 2" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Шаг 5: Скопируйте ключ</h4>
-                                               <p>Скопируйте созданный API ключ и вставьте его в поле выше в плагине</p>
-                                               <img src="${screenshots.step5}" alt="Создание ключа" class="screenshot-img">
-                                               <img src="${screenshots.step5_1}" alt="Копирование ключа" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Шаг 3: Включите Google Sheets API</h4>
+                                                   <p>Перейдите в <strong>APIs & Services → Library</strong> и найдите <strong>Google Sheets API</strong>. Нажмите "Enable" (Включить)</p>
+                                                   <img src="${screenshots.step3}" alt="Включение API" class="screenshot-img">
+                                                   <img src="${screenshots.step3_1}" alt="Включение API - шаг 2" class="screenshot-img">
+                                               </div>
 
-                                           <div class="important-note">
-                                               <p style="margin: 0;">
-                                                   ⚠️ <strong>Важно:</strong> Ваша Google таблица должна быть доступна по ссылке.
-                                                   Откройте настройки доступа: <strong>Share → Anyone with the link → Viewer</strong>
+                                               <div class="modal-step">
+                                                   <h4>Шаг 4: Создайте API ключ</h4>
+                                                   <p>Перейдите в <strong>APIs & Services → Credentials</strong> и нажмите <strong>Create Credentials → API key</strong></p>
+                                                   <img src="${screenshots.step4}" alt="Создание ключа" class="screenshot-img">
+                                               </div>
+
+                                               <div class="modal-step">
+                                                   <h4>Шаг 5: Скопируйте ключ</h4>
+                                                   <p>Скопируйте созданный API ключ и вставьте его в поле выше в плагине</p>
+                                                   <img src="${screenshots.step5}" alt="Создание ключа" class="screenshot-img">
+                                                   <img src="${screenshots.step5_1}" alt="Копирование ключа" class="screenshot-img">
+                                               </div>
+
+                                               <div class="important-note">
+                                                   <p style="margin: 0;">
+                                                       ⚠️ <strong>Важно:</strong> Ваша Google таблица должна быть доступна по ссылке.
+                                                       Откройте настройки доступа: <strong>Share → Anyone with the link → Viewer</strong>
+                                                   </p>
+                                               </div>
+
+                                               <p style="margin-top: 24px; text-align: center;">
+                                                   <a href="https://console.cloud.google.com" target="_blank"
+                                                      style="color: #2b7fff; text-decoration: none; font-weight: 500; font-size: 15px;">
+                                                       → Открыть Google Cloud Console
+                                                   </a>
                                                </p>
-                                           </div>
+                                           `,
+                    },
+                    en: {
+                        title: "📊 Google Sheets → Figma",
+                        sheetUrl: "Google Sheets URL",
+                        apiKey: "Google API Key",
+                        saveBtn: "Save",
+                        sheetName: "Sheet name",
+                        range: "Range (optional)",
+                        rangePlaceholder: "A1:D10 or leave empty",
+                        importBtn: "Import table",
+                        updateBtn: "🔄 Update selected table",
+                        keySaved: "✅ Key saved!",
+                        fillAllFields: "⚠️ Fill all fields",
+                        invalidUrl: "❌ Invalid spreadsheet URL",
+                        loading: "⏳ Loading data...",
+                        emptyTable: "❌ Table is empty or no access",
+                        loadedRows: "✅ Rows loaded:",
+                        updatedRows: "✅ Rows updated:",
+                        error: "❌ Error. Check key and URL",
+                        enterKey: "⚠️ Enter the key!",
+                        loadSheets: "Load sheets",
+                        selectSheets: "Select sheets to import:",
+                        importSelected: "✅ Import selected sheets",
+                        loadingSheets: "⏳ Loading sheets list...",
+                        noSheetsSelected: "⚠️ Select at least one sheet",
+                        sheetsLoaded: "✅ Sheets loaded:",
+                        helpLink: "How to get API key?",
+                        helpTitle: "How to get Google API Key",
+                        helpContent: `
+                                               <div class="modal-step">
+                                                   <h4>Step 1: Open Google Cloud Console</h4>
+                                                   <p>Go to <a href="https://console.cloud.google.com" target="_blank" style="color: #2b7fff; text-decoration: none; font-weight: 500;">Google Cloud Console</a></p>
+                                                   <img src="${screenshots.step1}" alt="Google Cloud Console" class="screenshot-img">
+                                               </div>
 
-                                           <p style="margin-top: 24px; text-align: center;">
-                                               <a href="https://console.cloud.google.com" target="_blank"
-                                                  style="color: #2b7fff; text-decoration: none; font-weight: 500; font-size: 15px;">
-                                                   → Открыть Google Cloud Console
-                                               </a>
-                                           </p>
-                                       `,
-                },
-                en: {
-                    title: "📊 Google Sheets → Figma",
-                    sheetUrl: "Google Sheets URL",
-                    apiKey: "Google API Key",
-                    saveBtn: "Save",
-                    sheetName: "Sheet name",
-                    range: "Range (optional)",
-                    rangePlaceholder: "A1:D10 or leave empty",
-                    importBtn: "Import table",
-                    updateBtn: "🔄 Update selected table",
-                    keySaved: "✅ Key saved!",
-                    fillAllFields: "⚠️ Fill all fields",
-                    invalidUrl: "❌ Invalid spreadsheet URL",
-                    loading: "⏳ Loading data...",
-                    emptyTable: "❌ Table is empty or no access",
-                    loadedRows: "✅ Rows loaded:",
-                    updatedRows: "✅ Rows updated:",
-                    error: "❌ Error. Check key and URL",
-                    enterKey: "⚠️ Enter the key!",
-                    loadSheets: "Load sheets",
-                    selectSheets: "Select sheets to import:",
-                    importSelected: "✅ Import selected sheets",
-                    loadingSheets: "⏳ Loading sheets list...",
-                    noSheetsSelected: "⚠️ Select at least one sheet",
-                    sheetsLoaded: "✅ Sheets loaded:",
-                    helpLink: "How to get API key?",
-                    helpTitle: "How to get Google API Key",
-                    helpContent: `
-                                           <div class="modal-step">
-                                               <h4>Step 1: Open Google Cloud Console</h4>
-                                               <p>Go to <a href="https://console.cloud.google.com" target="_blank" style="color: #2b7fff; text-decoration: none; font-weight: 500;">Google Cloud Console</a></p>
-                                               <img src="${screenshots.step1}" alt="Google Cloud Console" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Step 2: Create a new project</h4>
+                                                   <p>Click on the project dropdown at the top of the page and select "New Project"</p>
+                                                   <img src="${screenshots.step2}" alt="Creating project" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Step 2: Create a new project</h4>
-                                               <p>Click on the project dropdown at the top of the page and select "New Project"</p>
-                                               <img src="${screenshots.step2}" alt="Creating project" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Step 3: Enable Google Sheets API</h4>
+                                                   <p>Go to <strong>APIs & Services → Library</strong> and find <strong>Google Sheets API</strong>. Click "Enable"</p>
+                                                   <img src="${screenshots.step3}" alt="Enable API" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Step 3: Enable Google Sheets API</h4>
-                                               <p>Go to <strong>APIs & Services → Library</strong> and find <strong>Google Sheets API</strong>. Click "Enable"</p>
-                                               <img src="${screenshots.step3}" alt="Enable API" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Step 4: Create API key</h4>
+                                                   <p>Go to <strong>APIs & Services → Credentials</strong> and click <strong>Create Credentials → API key</strong></p>
+                                                   <img src="${screenshots.step4}" alt="Create key" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Step 4: Create API key</h4>
-                                               <p>Go to <strong>APIs & Services → Credentials</strong> and click <strong>Create Credentials → API key</strong></p>
-                                               <img src="${screenshots.step4}" alt="Create key" class="screenshot-img">
-                                           </div>
+                                               <div class="modal-step">
+                                                   <h4>Step 5: Copy the key</h4>
+                                                   <p>Copy the created API key and paste it into the field above in the plugin</p>
+                                                   <img src="${screenshots.step5}" alt="Copy key" class="screenshot-img">
+                                               </div>
 
-                                           <div class="modal-step">
-                                               <h4>Step 5: Copy the key</h4>
-                                               <p>Copy the created API key and paste it into the field above in the plugin</p>
-                                               <img src="${screenshots.step5}" alt="Copy key" class="screenshot-img">
-                                           </div>
+                                               <div class="important-note">
+                                                   <p style="margin: 0;">
+                                                       ⚠️ <strong>Important:</strong> Your Google Sheet must be shared with link access.
+                                                       Open sharing settings: <strong>Share → Anyone with the link → Viewer</strong>
+                                                   </p>
+                                               </div>
 
-                                           <div class="important-note">
-                                               <p style="margin: 0;">
-                                                   ⚠️ <strong>Important:</strong> Your Google Sheet must be shared with link access.
-                                                   Open sharing settings: <strong>Share → Anyone with the link → Viewer</strong>
+                                               <p style="margin-top: 24px; text-align: center;">
+                                                   <a href="https://console.cloud.google.com" target="_blank"
+                                                      style="color: #2b7fff; text-decoration: none; font-weight: 500; font-size: 15px;">
+                                                       → Open Google Cloud Console
+                                                   </a>
                                                </p>
-                                           </div>
-
-                                           <p style="margin-top: 24px; text-align: center;">
-                                               <a href="https://console.cloud.google.com" target="_blank"
-                                                  style="color: #2b7fff; text-decoration: none; font-weight: 500; font-size: 15px;">
-                                                   → Open Google Cloud Console
-                                               </a>
-                                           </p>
-                                       `,
-                },
-            };
-
-            let currentLang = "ru";
-
-            function t(key) {
-                return translations[currentLang][key] || key;
-            }
-
-            // Функция обновления всех текстов на странице
-            function updateTexts() {
-                document.querySelector("h3").textContent = t("title");
-                document.querySelectorAll("label")[0].textContent =
-                    t("sheetUrl");
-                document.querySelectorAll("label")[1].textContent = t("apiKey");
-                document.querySelector("#saveKeyBtn").textContent =
-                    t("saveBtn");
-                document.querySelectorAll("label")[2].textContent =
-                    t("sheetName");
-                document.querySelector("#loadSheetsBtn").textContent =
-                    t("loadSheets");
-                document.querySelectorAll("label")[3].textContent = t("range");
-                document.querySelector("#range").placeholder =
-                    t("rangePlaceholder");
-                document.querySelector("#importBtn").textContent =
-                    t("importBtn");
-                document.querySelector("#updateBtn").textContent =
-                    t("updateBtn");
-                document.querySelector("#helpLink").textContent = t("helpLink");
-
-                document.querySelector("#helpTitle").textContent =
-                    t("helpTitle");
-                document.querySelector("#helpContent").innerHTML =
-                    t("helpContent");
-
-                const sheetsListLabel =
-                    document.querySelector("#sheetsList label");
-                if (sheetsListLabel) {
-                    sheetsListLabel.textContent = t("selectSheets");
-                }
-                const importMultipleBtn =
-                    document.querySelector("#importMultipleBtn");
-                if (importMultipleBtn) {
-                    importMultipleBtn.textContent = t("importSelected");
-                }
-            }
-            // Кнопка переключения языка
-            document.getElementById("langToggle").onclick = () => {
-                currentLang = currentLang === "ru" ? "en" : "ru";
-                document.getElementById("langToggle").textContent =
-                    currentLang === "ru" ? "🇬🇧 EN" : "🇷🇺 RU";
-                updateTexts();
-
-                // Сохраняем выбранный язык
-                parent.postMessage(
-                    {
-                        pluginMessage: {
-                            type: "save-lang",
-                            lang: currentLang,
-                        },
+                                           `,
                     },
-                    "*",
-                );
-            };
-            let selectedTableData = null;
+                };
 
-            window.onmessage = (event) => {
-                if (event.data.pluginMessage?.type === "init") {
-                    const savedKey = event.data.pluginMessage.savedApiKey;
-                    if (savedKey) {
-                        document.getElementById("apiKey").value = savedKey;
-                    }
+                let currentLang = "ru";
 
-                    // Загружаем сохранённый язык
-                    const savedLang = event.data.pluginMessage.savedLang;
-                    if (savedLang) {
-                        currentLang = savedLang;
-                        document.getElementById("langToggle").textContent =
-                            currentLang === "ru" ? "🇬🇧 EN" : "🇷🇺 RU";
-                        updateTexts();
-                    }
-
-                    // Если выбрана таблица - показываем кнопку обновления
-                    selectedTableData = event.data.pluginMessage.selectedTable;
-
-                    if (selectedTableData) {
-                        document.getElementById("importBtn").style.display =
-                            "none";
-                        document.getElementById("updateBtn").style.display =
-                            "block";
-
-                        // Заполняем поля из выбранной таблицы
-                        document.getElementById("sheetUrl").value =
-                            `https://docs.google.com/spreadsheets/d/${selectedTableData.sheetId}`;
-                        document.getElementById("sheetName").value =
-                            selectedTableData.sheetName;
-                        document.getElementById("range").value =
-                            selectedTableData.range;
-                    } else {
-                        document.getElementById("importBtn").style.display =
-                            "block";
-                        document.getElementById("updateBtn").style.display =
-                            "none";
-                    }
-                }
-            };
-            // Отслеживаем изменения в поле API ключа
-            const apiKeyInput = document.getElementById("apiKey");
-            const saveKeyBtn = document.getElementById("saveKeyBtn");
-
-            apiKeyInput.addEventListener("input", () => {
-                const hasValue = apiKeyInput.value.trim().length > 0;
-                saveKeyBtn.disabled = !hasValue;
-            });
-            // Отслеживаем изменения в поле ссылки на таблицу
-            const sheetUrlInput = document.getElementById("sheetUrl");
-            const loadSheetsBtn = document.getElementById("loadSheetsBtn");
-
-            sheetUrlInput.addEventListener("input", () => {
-                const hasValue = sheetUrlInput.value.trim().length > 0;
-                loadSheetsBtn.disabled = !hasValue;
-            });
-
-            // Проверяем при загрузке
-            window.addEventListener("load", () => {
-                const hasValue = sheetUrlInput.value.trim().length > 0;
-                loadSheetsBtn.disabled = !hasValue;
-            });
-            // Проверяем при загрузке (если ключ загрузился из storage)
-            window.addEventListener("load", () => {
-                const hasValue = apiKeyInput.value.trim().length > 0;
-                saveKeyBtn.disabled = !hasValue;
-            });
-            // Кнопка "Сохранить ключ"
-            document.getElementById("saveKeyBtn").onclick = () => {
-                const apiKey = document.getElementById("apiKey").value.trim();
-                if (!apiKey) {
-                    document.getElementById("status").textContent =
-                        t("enterKey");
-                    return;
+                function t(key) {
+                    return translations[currentLang][key] || key;
                 }
 
-                // Отправляем команду в плагин сохранить ключ
-                parent.postMessage(
-                    {
-                        pluginMessage: {
-                            type: "save-key",
-                            apiKey: apiKey,
+                // Функция обновления всех текстов на странице
+                function updateTexts() {
+                    document.querySelector("h3").textContent = t("title");
+                    document.querySelectorAll("label")[0].textContent =
+                        t("sheetUrl");
+                    document.querySelectorAll("label")[1].textContent = t("apiKey");
+                    document.querySelector("#saveKeyBtn").textContent =
+                        t("saveBtn");
+                    document.querySelectorAll("label")[2].textContent =
+                        t("sheetName");
+                    document.querySelector("#loadSheetsBtn").textContent =
+                        t("loadSheets");
+                    document.querySelectorAll("label")[3].textContent = t("range");
+                    document.querySelector("#range").placeholder =
+                        t("rangePlaceholder");
+                    document.querySelector("#importBtn").textContent =
+                        t("importBtn");
+                    document.querySelector("#updateBtn").textContent =
+                        t("updateBtn");
+                    document.querySelector("#helpLink").textContent = t("helpLink");
+
+                    document.querySelector("#helpTitle").textContent =
+                        t("helpTitle");
+                    document.querySelector("#helpContent").innerHTML =
+                        t("helpContent");
+
+                    const sheetsListLabel =
+                        document.querySelector("#sheetsList label");
+                    if (sheetsListLabel) {
+                        sheetsListLabel.textContent = t("selectSheets");
+                    }
+                    const importMultipleBtn =
+                        document.querySelector("#importMultipleBtn");
+                    if (importMultipleBtn) {
+                        importMultipleBtn.textContent = t("importSelected");
+                    }
+                }
+                // Кнопка переключения языка
+                document.getElementById("langToggle").onclick = () => {
+                    currentLang = currentLang === "ru" ? "en" : "ru";
+                    document.getElementById("langToggle").textContent =
+                        currentLang === "ru" ? "🇬🇧 EN" : "🇷🇺 RU";
+                    updateTexts();
+
+                    // Сохраняем выбранный язык
+                    parent.postMessage(
+                        {
+                            pluginMessage: {
+                                type: "save-lang",
+                                lang: currentLang,
+                            },
                         },
-                    },
-                    "*",
-                );
-                document.getElementById("status").textContent = t("keySaved");
-            };
-            // Кнопка "Загрузить листы"
-            document.getElementById("loadSheetsBtn").onclick = async () => {
-                const url = document.getElementById("sheetUrl").value;
-                const apiKey = document.getElementById("apiKey").value;
-                const status = document.getElementById("status");
-
-                if (!url || !apiKey) {
-                    status.textContent = t("fillAllFields");
-                    return;
-                }
-
-                const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
-                if (!match) {
-                    status.textContent = t("invalidUrl");
-                    return;
-                }
-
-                const sheetId = match[1];
-                status.textContent = t("loadingSheets");
-
-                try {
-                    // Запрашиваем метаданные таблицы (список листов)
-                    const response = await fetch(
-                        `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}?key=${apiKey}`,
+                        "*",
                     );
-                    const data = await response.json();
+                };
+                let selectedTableData = null;
 
-                    if (!data.sheets || data.sheets.length === 0) {
-                        status.textContent = t("emptyTable");
+                window.onmessage = (event) => {
+                    if (event.data.pluginMessage?.type === "init") {
+                        const savedKey = event.data.pluginMessage.savedApiKey;
+                        if (savedKey) {
+                            document.getElementById("apiKey").value = savedKey;
+                        }
+
+
+                        const savedLang = event.data.pluginMessage.savedLang;
+                        if (savedLang) {
+                            currentLang = savedLang;
+                            document.getElementById("langToggle").textContent =
+                                currentLang === "ru" ? "🇬🇧 EN" : "🇷🇺 RU";
+                            updateTexts();
+                        }
+
+
+                        selectedTableData = event.data.pluginMessage.selectedTable;
+
+                        if (selectedTableData) {
+                            document.getElementById("importBtn").style.display =
+                                "none";
+                            document.getElementById("updateBtn").style.display =
+                                "block";
+
+
+                            document.getElementById("sheetUrl").value =
+                                `https://docs.google.com/spreadsheets/d/${selectedTableData.sheetId}`;
+                            document.getElementById("sheetName").value =
+                                selectedTableData.sheetName;
+                            document.getElementById("range").value =
+                                selectedTableData.range;
+                        } else {
+                            document.getElementById("importBtn").style.display =
+                                "block";
+                            document.getElementById("updateBtn").style.display =
+                                "none";
+                        }
+                    }
+                };
+
+                const apiKeyInput = document.getElementById("apiKey");
+                const saveKeyBtn = document.getElementById("saveKeyBtn");
+
+                apiKeyInput.addEventListener("input", () => {
+                    const hasValue = apiKeyInput.value.trim().length > 0;
+                    saveKeyBtn.disabled = !hasValue;
+                });
+
+                const sheetUrlInput = document.getElementById("sheetUrl");
+                const loadSheetsBtn = document.getElementById("loadSheetsBtn");
+
+                sheetUrlInput.addEventListener("input", () => {
+                    const hasValue = sheetUrlInput.value.trim().length > 0;
+                    loadSheetsBtn.disabled = !hasValue;
+                });
+
+                // Проверяем при загрузке
+                window.addEventListener("load", () => {
+                    const hasValue = sheetUrlInput.value.trim().length > 0;
+                    loadSheetsBtn.disabled = !hasValue;
+                });
+                // Проверяем при загрузке (если ключ загрузился из storage)
+                window.addEventListener("load", () => {
+                    const hasValue = apiKeyInput.value.trim().length > 0;
+                    saveKeyBtn.disabled = !hasValue;
+                });
+                // Кнопка "Сохранить ключ"
+                document.getElementById("saveKeyBtn").onclick = () => {
+                    const apiKey = document.getElementById("apiKey").value.trim();
+                    if (!apiKey) {
+                        document.getElementById("status").textContent =
+                            t("enterKey");
                         return;
                     }
 
-                    // Отображаем список листов с чекбоксами
-                    const checkboxesContainer =
-                        document.getElementById("sheetsCheckboxes");
-                    checkboxesContainer.innerHTML = "";
+                    // Отправляем команду в плагин сохранить ключ
+                    parent.postMessage(
+                        {
+                            pluginMessage: {
+                                type: "save-key",
+                                apiKey: apiKey,
+                            },
+                        },
+                        "*",
+                    );
+                    document.getElementById("status").textContent = t("keySaved");
+                };
+                // Кнопка "Загрузить листы"
+                document.getElementById("loadSheetsBtn").onclick = async () => {
+                    const url = document.getElementById("sheetUrl").value;
+                    const apiKey = document.getElementById("apiKey").value;
+                    const status = document.getElementById("status");
 
-                    data.sheets.forEach((sheet) => {
-                        const sheetTitle = sheet.properties.title;
+                    if (!url || !apiKey) {
+                        status.textContent = t("fillAllFields");
+                        return;
+                    }
 
-                        const label = document.createElement("label");
-                        label.style.display = "flex";
-                        label.style.alignItems = "center";
-                        label.style.marginBottom = "8px";
-                        label.style.cursor = "pointer";
-                        label.style.position = "relative";
+                    const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                    if (!match) {
+                        status.textContent = t("invalidUrl");
+                        return;
+                    }
 
-                        const checkbox = document.createElement("input");
-                        checkbox.type = "checkbox";
-                        checkbox.value = sheetTitle;
-                        checkbox.style.width = "14px";
-                        checkbox.style.height = "14px";
-                        checkbox.style.marginRight = "8px";
-                        checkbox.style.flexShrink = "0";
-                        checkbox.style.cursor = "pointer";
-                        checkbox.style.appearance = "none";
-                        checkbox.style.border = "1px solid #e2e8f0";
-                        checkbox.style.borderRadius = "6px";
-                        checkbox.style.backgroundColor = "#fff";
-                        checkbox.style.position = "relative";
+                    const sheetId = match[1];
+                    status.textContent = t("loadingSheets");
 
-                        // Галочка при checked состоянии
-                        checkbox.addEventListener("change", (e) => {
-                            if (e.target.checked) {
-                                checkbox.style.backgroundColor = "#2b7fff";
-                                checkbox.style.borderColor = "#2b7fff";
-                                checkbox.style.backgroundImage =
-                                    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E\")";
-                                checkbox.style.backgroundSize = "14px 14px";
-                                checkbox.style.backgroundPosition = "center";
-                                checkbox.style.backgroundRepeat = "no-repeat";
-                            } else {
-                                checkbox.style.backgroundColor = "#fff";
-                                checkbox.style.borderColor = "#e2e8f0";
-                                checkbox.style.backgroundImage = "none";
-                            }
+                    try {
+                        // Запрашиваем метаданные таблицы (список листов)
+                        const response = await fetch(
+                            `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}?key=${apiKey}`,
+                        );
+                        const data = await response.json();
+
+                        if (!data.sheets || data.sheets.length === 0) {
+                            status.textContent = t("emptyTable");
+                            return;
+                        }
+
+                        // Отображаем список листов с чекбоксами
+                        const checkboxesContainer =
+                            document.getElementById("sheetsCheckboxes");
+                        checkboxesContainer.innerHTML = "";
+
+                        data.sheets.forEach((sheet) => {
+                            const sheetTitle = sheet.properties.title;
+
+                            const label = document.createElement("label");
+                            label.style.display = "flex";
+                            label.style.alignItems = "center";
+                            label.style.marginBottom = "8px";
+                            label.style.cursor = "pointer";
+                            label.style.position = "relative";
+
+                            const checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.value = sheetTitle;
+                            checkbox.style.width = "14px";
+                            checkbox.style.height = "14px";
+                            checkbox.style.marginRight = "8px";
+                            checkbox.style.flexShrink = "0";
+                            checkbox.style.cursor = "pointer";
+                            checkbox.style.appearance = "none";
+                            checkbox.style.border = "1px solid #e2e8f0";
+                            checkbox.style.borderRadius = "6px";
+                            checkbox.style.backgroundColor = "#fff";
+                            checkbox.style.position = "relative";
+
+                            // Галочка при checked состоянии
+                            checkbox.addEventListener("change", (e) => {
+                                if (e.target.checked) {
+                                    checkbox.style.backgroundColor = "#2b7fff";
+                                    checkbox.style.borderColor = "#2b7fff";
+                                    checkbox.style.backgroundImage =
+                                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E\")";
+                                    checkbox.style.backgroundSize = "14px 14px";
+                                    checkbox.style.backgroundPosition = "center";
+                                    checkbox.style.backgroundRepeat = "no-repeat";
+                                } else {
+                                    checkbox.style.backgroundColor = "#fff";
+                                    checkbox.style.borderColor = "#e2e8f0";
+                                    checkbox.style.backgroundImage = "none";
+                                }
+                            });
+
+                            const span = document.createElement("span");
+                            span.textContent = sheetTitle;
+                            span.style.fontSize = "14px";
+                            span.style.lineHeight = "14px";
+                            span.style.overflow = "hidden";
+                            span.style.textOverflow = "ellipsis";
+                            span.style.whiteSpace = "nowrap";
+                            span.style.flex = "1";
+
+                            label.appendChild(checkbox);
+                            label.appendChild(span);
+                            checkboxesContainer.appendChild(label);
                         });
 
-                        const span = document.createElement("span");
-                        span.textContent = sheetTitle;
-                        span.style.fontSize = "14px";
-                        span.style.lineHeight = "14px";
-                        span.style.overflow = "hidden";
-                        span.style.textOverflow = "ellipsis";
-                        span.style.whiteSpace = "nowrap";
-                        span.style.flex = "1";
+                        document.getElementById("sheetsList").style.display =
+                            "block";
+                        status.textContent = `${t("sheetsLoaded")} ${data.sheets.length}`;
+                    } catch (e) {
+                        status.textContent = t("error");
+                        console.error(e);
+                    }
+                };
+                // Кнопка "Импортировать таблицу"
+                document.getElementById("importBtn").onclick = async () => {
+                    const url = document.getElementById("sheetUrl").value;
+                    const apiKey = document.getElementById("apiKey").value;
+                    const sheetName =
+                        document.getElementById("sheetName").value || "Лист1";
+                    const range = document.getElementById("range").value.trim();
+                    const status = document.getElementById("status");
 
-                        label.appendChild(checkbox);
-                        label.appendChild(span);
-                        checkboxesContainer.appendChild(label);
-                    });
-
-                    document.getElementById("sheetsList").style.display =
-                        "block";
-                    status.textContent = `${t("sheetsLoaded")} ${data.sheets.length}`;
-                } catch (e) {
-                    status.textContent = t("error");
-                    console.error(e);
-                }
-            };
-            // Кнопка "Импортировать таблицу"
-            document.getElementById("importBtn").onclick = async () => {
-                const url = document.getElementById("sheetUrl").value;
-                const apiKey = document.getElementById("apiKey").value;
-                const sheetName =
-                    document.getElementById("sheetName").value || "Лист1";
-                const range = document.getElementById("range").value.trim();
-                const status = document.getElementById("status");
-
-                // Проверяем что поля заполнены
-                if (!url || !apiKey) {
-                    status.textContent = t("fillAllFields");
-                    return;
-                }
-
-                // Достаём ID таблицы из ссылки
-                const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
-                if (!match) {
-                    status.textContent = t("invalidUrl");
-                    return;
-                }
-
-                const sheetId = match[1];
-                status.textContent = t("loading");
-
-                try {
-                    // Формируем диапазон: либо "Лист1!A1:D10", либо просто "Лист1"
-                    const rangeParam = range
-                        ? `${sheetName}!${range}`
-                        : sheetName;
-
-                    const response = await fetch(
-                        `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeParam}?key=${apiKey}`,
-                    );
-                    const data = await response.json();
-
-                    if (!data.values) {
-                        status.textContent = t("emptyTable");
+                    // Проверяем что поля заполнены
+                    if (!url || !apiKey) {
+                        status.textContent = t("fillAllFields");
                         return;
                     }
 
-                    // Фильтруем пустые строки и комментарии
-                    const filteredData = data.values.filter((row) => {
-                        // Пропускаем полностью пустые строки
-                        const hasContent = row.some(
-                            (cell) => cell && cell.trim() !== "",
-                        );
-                        if (!hasContent) return false;
-
-                        // Пропускаем строки-комментарии (начинаются с //)
-                        const firstCell = String(row[0] || "").trim();
-                        if (firstCell.startsWith("//")) return false;
-
-                        return true;
-                    });
-
-                    status.textContent = `${t("loadedRows")} ${filteredData.length}`;
-
-                    parent.postMessage(
-                        {
-                            pluginMessage: {
-                                type: "create-table",
-                                tableData: filteredData,
-                                sheetId: sheetId,
-                                sheetName: sheetName,
-                                range: range,
-                            },
-                        },
-                        "*",
-                    );
-                } catch (e) {
-                    status.textContent = t("error");
-                    console.error(e);
-                }
-            };
-            // Кнопка "Обновить таблицу"
-            document.getElementById("updateBtn").onclick = async () => {
-                const url = document.getElementById("sheetUrl").value;
-                const apiKey = document.getElementById("apiKey").value;
-                const sheetName =
-                    document.getElementById("sheetName").value || "Лист1";
-                const range = document.getElementById("range").value.trim();
-                const status = document.getElementById("status");
-
-                if (!url || !apiKey) {
-                    status.textContent = t("fillAllFields");
-                    return;
-                }
-
-                const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
-                if (!match) {
-                    status.textContent = t("invalidUrl");
-                    return;
-                }
-
-                const sheetId = match[1];
-                status.textContent = t("loading");
-
-                try {
-                    const rangeParam = range
-                        ? `${sheetName}!${range}`
-                        : sheetName;
-                    const response = await fetch(
-                        `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeParam}?key=${apiKey}`,
-                    );
-                    const data = await response.json();
-
-                    if (!data.values) {
-                        status.textContent = t("emptyTable");
+                    // Достаём ID таблицы из ссылки
+                    const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                    if (!match) {
+                        status.textContent = t("invalidUrl");
                         return;
                     }
 
-                    const filteredData = data.values.filter((row) => {
-                        const hasContent = row.some(
-                            (cell) => cell && cell.trim() !== "",
-                        );
-                        if (!hasContent) return false;
-                        const firstCell = String(row[0] || "").trim();
-                        if (firstCell.startsWith("//")) return false;
-                        return true;
-                    });
+                    const sheetId = match[1];
+                    status.textContent = t("loading");
 
-                    status.textContent = `${t("updatedRows")} ${filteredData.length}`;
-
-                    // ВАЖНО: передаём флаг что это обновление
-                    parent.postMessage(
-                        {
-                            pluginMessage: {
-                                type: "update-table", // ← другой тип!
-                                tableData: filteredData,
-                                sheetId: sheetId,
-                                sheetName: sheetName,
-                                range: range,
-                            },
-                        },
-                        "*",
-                    );
-                } catch (e) {
-                    status.textContent = t("error");
-                    console.error(e);
-                }
-            };
-            // Кнопка "Импортировать выбранные листы"
-            document.getElementById("importMultipleBtn").onclick = async () => {
-                const url = document.getElementById("sheetUrl").value;
-                const apiKey = document.getElementById("apiKey").value;
-                const range = document.getElementById("range").value.trim();
-                const status = document.getElementById("status");
-
-                // Собираем отмеченные листы
-                const checkboxes = document.querySelectorAll(
-                    "#sheetsCheckboxes input[type='checkbox']:checked",
-                );
-                const selectedSheets = Array.from(checkboxes).map(
-                    (cb) => cb.value,
-                );
-
-                if (selectedSheets.length === 0) {
-                    status.textContent = t("noSheetsSelected");
-                    return;
-                }
-
-                const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
-                const sheetId = match[1];
-
-                status.textContent = `${t("loading")} (${selectedSheets.length} ${selectedSheets.length === 1 ? "лист" : "листа"})`;
-
-                try {
-                    const allTablesData = [];
-
-                    // Загружаем данные для каждого выбранного листа
-                    for (const sheetName of selectedSheets) {
+                    try {
+                        // Формируем диапазон: либо "Лист1!A1:D10", либо просто "Лист1"
                         const rangeParam = range
                             ? `${sheetName}!${range}`
                             : sheetName;
@@ -870,65 +733,210 @@
                         );
                         const data = await response.json();
 
-                        if (data.values && data.values.length > 0) {
-                            const filteredData = data.values.filter((row) => {
-                                const hasContent = row.some(
-                                    (cell) => cell && cell.trim() !== "",
-                                );
-                                if (!hasContent) return false;
-                                const firstCell = String(row[0] || "").trim();
-                                if (firstCell.startsWith("//")) return false;
-                                return true;
-                            });
-
-                            allTablesData.push({
-                                sheetName,
-                                data: filteredData,
-                            });
+                        if (!data.values) {
+                            status.textContent = t("emptyTable");
+                            return;
                         }
-                    }
 
-                    if (allTablesData.length === 0) {
-                        status.textContent = t("emptyTable");
+                        // Фильтруем пустые строки и комментарии
+                        const filteredData = data.values.filter((row) => {
+                            // Пропускаем полностью пустые строки
+                            const hasContent = row.some(
+                                (cell) => cell && cell.trim() !== "",
+                            );
+                            if (!hasContent) return false;
+
+                            // Пропускаем строки-комментарии (начинаются с //)
+                            const firstCell = String(row[0] || "").trim();
+                            if (firstCell.startsWith("//")) return false;
+
+                            return true;
+                        });
+
+                        status.textContent = `${t("loadedRows")} ${filteredData.length}`;
+
+                        parent.postMessage(
+                            {
+                                pluginMessage: {
+                                    type: "create-table",
+                                    tableData: filteredData,
+                                    sheetId: sheetId,
+                                    sheetName: sheetName,
+                                    range: range,
+                                },
+                            },
+                            "*",
+                        );
+                    } catch (e) {
+                        status.textContent = t("error");
+                        console.error(e);
+                    }
+                };
+                // Кнопка "Обновить таблицу"
+                document.getElementById("updateBtn").onclick = async () => {
+                    const url = document.getElementById("sheetUrl").value;
+                    const apiKey = document.getElementById("apiKey").value;
+                    const sheetName =
+                        document.getElementById("sheetName").value || "Лист1";
+                    const range = document.getElementById("range").value.trim();
+                    const status = document.getElementById("status");
+
+                    if (!url || !apiKey) {
+                        status.textContent = t("fillAllFields");
                         return;
                     }
 
-                    status.textContent = `✅ Импортировано листов: ${allTablesData.length}`;
+                    const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                    if (!match) {
+                        status.textContent = t("invalidUrl");
+                        return;
+                    }
 
-                    // Отправляем данные в плагин
-                    parent.postMessage(
-                        {
-                            pluginMessage: {
-                                type: "create-multiple-tables",
-                                tables: allTablesData,
-                                sheetId: sheetId,
-                                range: range,
+                    const sheetId = match[1];
+                    status.textContent = t("loading");
+
+                    try {
+                        const rangeParam = range
+                            ? `${sheetName}!${range}`
+                            : sheetName;
+                        const response = await fetch(
+                            `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeParam}?key=${apiKey}`,
+                        );
+                        const data = await response.json();
+
+                        if (!data.values) {
+                            status.textContent = t("emptyTable");
+                            return;
+                        }
+
+                        const filteredData = data.values.filter((row) => {
+                            const hasContent = row.some(
+                                (cell) => cell && cell.trim() !== "",
+                            );
+                            if (!hasContent) return false;
+                            const firstCell = String(row[0] || "").trim();
+                            if (firstCell.startsWith("//")) return false;
+                            return true;
+                        });
+
+                        status.textContent = `${t("updatedRows")} ${filteredData.length}`;
+
+                        // ВАЖНО: передаём флаг что это обновление
+                        parent.postMessage(
+                            {
+                                pluginMessage: {
+                                    type: "update-table", // ← другой тип!
+                                    tableData: filteredData,
+                                    sheetId: sheetId,
+                                    sheetName: sheetName,
+                                    range: range,
+                                },
                             },
-                        },
-                        "*",
+                            "*",
+                        );
+                    } catch (e) {
+                        status.textContent = t("error");
+                        console.error(e);
+                    }
+                };
+                // Кнопка "Импортировать выбранные листы"
+                document.getElementById("importMultipleBtn").onclick = async () => {
+                    const url = document.getElementById("sheetUrl").value;
+                    const apiKey = document.getElementById("apiKey").value;
+                    const range = document.getElementById("range").value.trim();
+                    const status = document.getElementById("status");
+
+                    // Собираем отмеченные листы
+                    const checkboxes = document.querySelectorAll(
+                        "#sheetsCheckboxes input[type='checkbox']:checked",
                     );
-                } catch (e) {
-                    status.textContent = t("error");
-                    console.error(e);
-                }
-            };
-            // Открыть модалку с инструкцией
-            document.getElementById("helpLink").onclick = (e) => {
-                e.preventDefault();
-                document.getElementById("helpModal").style.display = "block";
-            };
+                    const selectedSheets = Array.from(checkboxes).map(
+                        (cb) => cb.value,
+                    );
 
-            // Закрыть модалку
-            document.getElementById("closeHelp").onclick = () => {
-                document.getElementById("helpModal").style.display = "none";
-            };
+                    if (selectedSheets.length === 0) {
+                        status.textContent = t("noSheetsSelected");
+                        return;
+                    }
 
-            // Закрыть по клику вне модалки
-            document.getElementById("helpModal").onclick = (e) => {
-                if (e.target.id === "helpModal") {
+                    const match = url.match(/\/spreadsheets\/d\/([a-zA-Z0-9-_]+)/);
+                    const sheetId = match[1];
+
+                    status.textContent = `${t("loading")} (${selectedSheets.length} ${selectedSheets.length === 1 ? "лист" : "листа"})`;
+
+                    try {
+                        const allTablesData = [];
+
+                        // Загружаем данные для каждого выбранного листа
+                        for (const sheetName of selectedSheets) {
+                            const rangeParam = range
+                                ? `${sheetName}!${range}`
+                                : sheetName;
+
+                            const response = await fetch(
+                                `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${rangeParam}?key=${apiKey}`,
+                            );
+                            const data = await response.json();
+
+                            if (data.values && data.values.length > 0) {
+                                const filteredData = data.values.filter((row) => {
+                                    const hasContent = row.some(
+                                        (cell) => cell && cell.trim() !== "",
+                                    );
+                                    if (!hasContent) return false;
+                                    const firstCell = String(row[0] || "").trim();
+                                    if (firstCell.startsWith("//")) return false;
+                                    return true;
+                                });
+
+                                allTablesData.push({
+                                    sheetName,
+                                    data: filteredData,
+                                });
+                            }
+                        }
+
+                        if (allTablesData.length === 0) {
+                            status.textContent = t("emptyTable");
+                            return;
+                        }
+
+                        status.textContent = `✅ Импортировано листов: ${allTablesData.length}`;
+
+                        // Отправляем данные в плагин
+                        parent.postMessage(
+                            {
+                                pluginMessage: {
+                                    type: "create-multiple-tables",
+                                    tables: allTablesData,
+                                    sheetId: sheetId,
+                                    range: range,
+                                },
+                            },
+                            "*",
+                        );
+                    } catch (e) {
+                        status.textContent = t("error");
+                        console.error(e);
+                    }
+                };
+                // Открыть модалку с инструкцией
+                document.getElementById("helpLink").onclick = (e) => {
+                    e.preventDefault();
+                    document.getElementById("helpModal").style.display = "block";
+                };
+
+                // Закрыть модалку
+                document.getElementById("closeHelp").onclick = () => {
                     document.getElementById("helpModal").style.display = "none";
-                }
-            };
+                };
+
+                // Закрыть по клику вне модалки
+                document.getElementById("helpModal").onclick = (e) => {
+                    if (e.target.id === "helpModal") {
+                        document.getElementById("helpModal").style.display = "none";
+                    }
+                };
         </script>
     </body>
 </html>
