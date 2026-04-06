@@ -1,8 +1,10 @@
 {
   "name": "Google Sheets to Figma",
-  "id": "sheets-to-figma",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["https://sheets.googleapis.com"]
+  }
 }
