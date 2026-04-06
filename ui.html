@@ -294,8 +294,10 @@
                     title: "📊 Google Sheets → Figma",
                     sheetUrl: "Ссылка на Google таблицу",
                     apiKey: "Google API Key",
+                    apiKeyPlaceholder: "Вставь сюда API ключ",
                     saveBtn: "Сохранить",
                     sheetName: "Название листа",
+                    sheetNamePlaceholder: "Лист1",
                     range: "Диапазон (необязательно)",
                     rangePlaceholder: "A1:D10 или оставь пустым",
                     importBtn: "Импортировать таблицу",
@@ -370,8 +372,10 @@
                     title: "📊 Google Sheets → Figma",
                     sheetUrl: "Google Sheets URL",
                     apiKey: "Google API Key",
+                    apiKeyPlaceholder: "Paste your API key here",
                     saveBtn: "Save",
                     sheetName: "Sheet name",
+                    sheetNamePlaceholder: "Sheet1",
                     range: "Range (optional)",
                     rangePlaceholder: "A1:D10 or leave empty",
                     importBtn: "Import table",
@@ -485,6 +489,11 @@
                 if (importMultipleBtn) {
                     importMultipleBtn.textContent = t("importSelected");
                 }
+                document.querySelector("#apiKey").placeholder =
+                    t("apiKeyPlaceholder");
+                document.querySelector("#sheetName").placeholder = t(
+                    "sheetNamePlaceholder",
+                );
             }
             // Кнопка переключения языка
             document.getElementById("langToggle").onclick = () => {
