@@ -454,6 +454,10 @@
             };
 
             let currentLang = "ru";
+            // Инициализация текстов при загрузке
+            window.addEventListener("load", () => {
+                updateTexts();
+            });
             function t(key) {
                 return translations[currentLang][key] || key;
             }
@@ -483,6 +487,11 @@
                     t("helpTitle");
                 document.querySelector("#helpContent").innerHTML =
                     t("helpContent");
+                document.querySelector("#apiKey").placeholder =
+                    t("apiKeyPlaceholder");
+                document.querySelector("#sheetName").placeholder = t(
+                    "sheetNamePlaceholder",
+                );
 
                 const sheetsListLabel =
                     document.querySelector("#sheetsList label");
