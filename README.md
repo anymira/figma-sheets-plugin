@@ -2,7 +2,6 @@
 
 Import and sync Google Sheets data directly into Figma tables with automatic updates.
 
-
 ## ✨ Features
 
 - 📥 **Import Google Sheets** — Convert spreadsheet data into Figma tables instantly
@@ -15,13 +14,16 @@ Import and sync Google Sheets data directly into Figma tables with automatic upd
 
 ### 1. Get Google API Key
 
+![Step 1: Open Google Cloud Console](screenshots/step1.png)
+*Open Google Cloud Console*
+
 1. Open [Google Cloud Console](https://console.cloud.google.com)
 2. Create a new project
 3. Enable **Google Sheets API**
 4. Create **API Key** in Credentials
 5. Copy the key
 
-*Detailed instructions available in the plugin (click "How to get API key?")*
+*Detailed step-by-step tutorial with screenshots available in the plugin (click "How to get API key?")*
 
 ### 2. Prepare Your Google Sheet
 
@@ -60,6 +62,7 @@ Rows starting with `//` will be ignored (treated as comments).
 
 ## 🛠 Installation for Development
 
+```bash
 # Clone the repository
 git clone https://github.com/anymira/figma-sheets-plugin.git
 cd figma-sheets-plugin
@@ -78,8 +81,6 @@ Then in Figma:
 Go to Plugins → Development → Import plugin from manifest
 Select manifest.json from the project folder
 📦 File Structure
-
-text
 
 figma-sheets-plugin/
 ├── manifest.json       # Plugin configuration
@@ -102,8 +103,8 @@ Make sure Google Sheets API is enabled in your Google Cloud project
 Plugin doesn't update
 Try selecting the table again
 Check that the spreadsheet URL matches the original
-🔒 Privacy
 
+🔒 Privacy
 Your API key is stored locally in Figma
 No data is sent to third-party servers
 The plugin only communicates with Google Sheets API
