@@ -113,7 +113,7 @@ MIT License - feel free to use and modify!
 
 👩‍💻 Author
 
-Created by anymira
+Created by [anymira](https://github.com/anymira)
 
 🤝 Contributing
 
