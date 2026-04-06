@@ -80,6 +80,7 @@ Then in Figma:
 
 Go to Plugins → Development → Import plugin from manifest
 Select manifest.json from the project folder
+
 📦 File Structure
 
 figma-sheets-plugin/
@@ -91,6 +92,8 @@ figma-sheets-plugin/
 ├── package.json
 ├── tsconfig.json
 └── README.md
+
+```bash
 
 🐛 Troubleshooting
 
