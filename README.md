@@ -60,7 +60,6 @@ Rows starting with `//` will be ignored (treated as comments).
 
 ## 🛠 Installation for Development
 
-```bash
 # Clone the repository
 git clone https://github.com/anymira/figma-sheets-plugin.git
 cd figma-sheets-plugin
