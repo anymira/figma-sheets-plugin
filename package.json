@@ -1,13 +1,15 @@
 {
   "name": "figma-sheets-plugin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Google Sheets to Figma plugin",
+  "main": "code.js",
   "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anna Diyanova",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
