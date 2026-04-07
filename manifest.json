@@ -1,5 +1,6 @@
 {
   "name": "Google Sheets to Figma",
+  "id": "1623305517596717749",
   "api": "1.0.0",
   "main": "code.js",
   "ui": "ui.html",
